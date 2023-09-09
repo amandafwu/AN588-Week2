@@ -4,8 +4,7 @@ author: "Amanda Wu"
 date: "2023-09-09"
 output: html_document
 ---
-# checking that this will push to github
-# check num 2
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -29,3 +28,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Module 3: Step 4 error "remote origin already exists."
+- Go to terminal and enter: git remote remove origin
+- To check that handler is deleted properly, run the following: git remote -v
+- Enter the desired origin from code in github
