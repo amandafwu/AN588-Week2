@@ -52,7 +52,7 @@ x <- m[2, c(2:6, 9)]
 x
 ```
 ```{r}
-Module 4 Challenge 3 
+## Module 4 Challenge 3 
 #Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
 a <- array(400:1, dim = c(5, 5, 4, 4))
 a
