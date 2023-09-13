@@ -19,12 +19,37 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
 ```{r pressure, echo=FALSE}
-plot(pressure)
+## Module 4 Challenge 1
+#First, create a vector of 1, word character strings comprising the first line of the novel Ulysses, by James Joyce: “Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.”
+#Then, extract every third element of this vector.
+
+Ulysses <- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.")
+Ulysses
+c <- str_split(Ulysses," ", simplify = TRUE)
+c
+f <- c[seq(from = 3, to = 22, by = 3)]
+f
+
+```
+```{r}
+## Module 4 Challenge 2
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
+#Given the matrix, m, above, extract the 2nd, 3rd, and 6th columns and assign them to the variable x
+x <- m[, c(2,3,6)]
+x
+#Given the matrix, m, above, extract the 6th to 8th row and assign them to the variable x
+r <- c(6,7,8)
+x <- m[r, , drop = FALSE]
+x
+#Given the matrix, m, above, extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+r <- c(2)
+x <- m[, c(2:6, 9)][r, , drop = FALSE]
+x
+#or?
+x <- m[2, c(2:6, 9)]
+x
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -33,3 +58,5 @@ Module 3: Step 4 error "remote origin already exists."
 - Go to terminal and enter: git remote remove origin
 - To check that handler is deleted properly, run the following: git remote -v
 - Enter the desired origin from code in github
+Module 4 Challenge 1 TIP: 
+- Str_split will take a string and divide it into substrings but make sure that simplify is TRUE or else it may not work
