@@ -28,7 +28,7 @@ Ulysses <- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bo
 Ulysses
 c <- str_split(Ulysses," ", simplify = TRUE)
 c
-f <- c[seq(from = 3, to = 22, by = 3)]
+f <- c[seq(from = 3, to = 22, by = 3)] 
 f
 
 ```
@@ -60,6 +60,36 @@ a[1, 1, 1, 2]
 a[2, 3, 2, ]
 a[1:5, 1:5, 3, 3]
 ```
+```{r}
+## Module 4 Challenge 4
+#Create a list representing this (simplified) primate taxonomy: 
+#Ex:
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Strepsirhini
+
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae")
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+names(Anthropoidea) <- list("Platyrrhini", "Catarrhini")
+Anthropoidea
+
+Tarsioidea <- c("Tarsiidae")
+Tarsioidea
+Haplorhini <- list(Anthropoidea, Tarsioidea)
+names(Haplorhini) <- c("Anthropoidea", "Tarsioidea")
+Haplorhini
+
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates 
+
+#Question: Are the names supposed to stack as you go down the list? Ex: $Strepsirhini$Lemuroidea 
+```
+
 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
