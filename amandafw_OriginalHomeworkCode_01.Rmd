@@ -5,29 +5,9 @@ date: "2023-09-14"
 output: html_document
 ---
 
----
-title: "CHALLENGES"
-author: "Amanda Wu"
-date: "2023-09-09"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-
-```{r pressure, echo=FALSE}
+```{r}
 ## Module 4 Challenge 1
 #First, create a vector of 1, word character strings comprising the first line of the novel Ulysses, by James Joyce: “Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.”
 #Then, extract every third element of this vector.
@@ -72,6 +52,8 @@ a[1, 1, 1, 2]
 a[2, 3, 2, ]
 a[1:5, 1:5, 3, 3]
 ```
+
+
 ```{r}
 ## Module 4 Challenge 4
 #Create a list representing this (simplified) primate taxonomy: 
@@ -124,7 +106,7 @@ str(logic)
 str(factor)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
 
 Module 3: Step 4 error "remote origin already exists." fix
 - Go to terminal and enter: git remote remove origin
