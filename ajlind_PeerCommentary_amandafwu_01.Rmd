@@ -1,0 +1,171 @@
+---
+title: "Amandafw_OriginalHomeworkCode_01"
+author: "Amanda Wu"
+date: "2023-09-14"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: vingette
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## R Markdown
+
+```{r Challenge 1}
+##Module 4 Challenge 1
+#First, create a vector of 1, word character strings comprising the first line of the novel Ulysses, by James Joyce: “Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.”
+#Then, extract every third element of this vector.
+
+Ulysses <- c("Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.") #made a string with the sentence
+Ulysses
+c <- (strsplit(Ulysses, " ",)[[1]]) #used strsplit to split each word between a space into each different substrings 
+c
+f <- c[seq(from = 3, to = 22, by = 3)] #used seq to take the third word 
+f
+```
+
+*I like the choice to include the original instructions, makes the comments really clear on the step-by-step*
+
+*Do you like the simplicity of the entire challenge being in one chunk? My hesitation is that if you're looking for one part ie. just how to use strsplit(), you're gonna have to dig a bit since it's not all outlined with subheadings if that makes sense*
+-AJL
+```{r}
+##Module 4 Challenge 2
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE) #made the matrix following Module 4
+m
+#Given the matrix, m, above, extract the 2nd, 3rd, and 6th columns and assign them to the variable x
+x <- m[, c(2,3,6)] #the numbers after the comma represents columns 
+x
+#Given the matrix, m, above, extract the 6th to 8th row and assign them to the variable x
+r <- c(6,7,8) #specifies the rows
+x <- m[r, , drop = FALSE] 
+x
+#Given the matrix, m, above, extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+r <- c(2)
+x <- m[, c(2:6, 9)][r, , drop = FALSE]
+x
+#or?
+x <- m[2, c(2:6, 9)]
+x
+#not sure which one is correct
+```
+*small note but I would keep naming the chunks with the challenge just for consistency's sake*
+
+*Why for the second one do you assign the rows to r and then use r to extract rows? Maybe explain that choice/that it's an option since you didn't do that for the first one with the columns - also explaining what drop=FALSE means might be a good idea as I didn't have to do that for my extractions*
+*for the last, you're only extracting the 9th column in the first option and then ony the 2nd row for the second option - I think what you want is rows 2-6, columns 2-9 so you could do something like m[c(2:6), c(2:9)]*
+-AJL
+
+```{r}
+##Module 4 Challenge 3
+#Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+a <- array(400:1, dim = c(5, 5, 4, 4)) #followed the steps in Module 4 making an array but 400:1 because it is in descending order 
+a
+b <- a[1, 1, 1, 2] 
+b
+c <- a[2, 3, 2, ]
+c
+d <- a[1:5, 1:5, 3, 3]
+d
+```
+*maybe explain that the second half is extraction/subsetting since there's no instructions or comments there*
+-AJL
+
+```{r}
+##Module 4 Challenge 4
+#Create a list representing this (simplified) primate taxonomy: 
+#Ex:
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae",
+    "Daubentoniidae")
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Strepsirhini <- list(Lemuroidea, Lorisoidea)
+names(Strepsirhini) <- list("Lemuroidea", "Lorisoidea")
+Strepsirhini
+
+Platyrrhini <- c("Cebidae", "Atelidae", "Pitheciidae") #constructed the lists following the example
+Catarrhini <- c("Cercopithecidae", "Hylobatidae", "Hominidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+names(Anthropoidea) <- list("Platyrrhini", "Catarrhini")
+Anthropoidea
+
+Tarsioidea <- c("Tarsiidae")
+Tarsioidea
+Haplorhini <- list(Anthropoidea, Tarsioidea)
+names(Haplorhini) <- c("Anthropoidea", "Tarsioidea")
+Haplorhini
+
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates 
+
+#Question: Are the names supposed to stack as you go down the list? Ex: $Strepsirhini$Lemuroidea 
+```
+*re: your question about stacking - that's what happened in my code as well!*
+-AJL
+
+```{r}
+##Module 4 Challenge 5
+#Store the following numbers as a 5 x 3 matrix, called “m3”: 3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2. Be sure to fill the matrix ROW-WISE
+x <- c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2) #made a vector
+m3 <- matrix(x, nrow = 5, ncol = 3, byrow = TRUE) #made a matrix with 5 rows and 3 columns organized by row
+m3
+#Coerce the matrix to a data frame.
+df <- data.frame(m3) 
+df
+#As a data frame, coerce the second column to be logical-valued
+logic <- as.logical(df$X2) #included the $ because it wouldn't work without it
+logic
+#As a data frame, coerce the third column to be factor-valued
+factor <- as.factor(df$X3)
+factor
+#Use the str() command to show the data type for each variable in your dataframe.
+str(df)
+str(logic)
+str(factor)
+#Questionable whether this is what the instructions were asking for
+```
+
+*for coercing, if this is helpful I did df[,2]<-as.factor(df[,2])
+so, I used brackets to extract*
+
+*Your trick with the $ might still work but I wouldn't use the logic/factor before <- because you're turning them into vectors which I don't think was your intention*
+-AJL
+
+
+
+Module 3: Step 4 error "remote origin already exists." fix - Go to
+terminal and enter: git remote remove origin - To check that handler is
+deleted properly, run the following: git remote -v - Enter the desired
+origin from code in github
+
+Module 4 Challenge 1 TIP: - Str_split will take a string and divide it
+into substrings but make sure that simplify is TRUE or else it may not
+work
+
+Module 5 Errors: - unable to install XLConnect Error message: Error:
+package or namespace load failed for 'XLConnect': .onLoad failed in
+loadNamespace() for 'rJava', details: call: dyn.load(jli, FALSE) error:
+unable to load shared object '/Library/Internet
+Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jli/libjli.dylib':
+dlopen(/Library/Internet
+Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jli/libjli.dylib,
+0x000A): tried: '/Library/Internet
+Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jli/libjli.dylib'
+(mach-o file, but is an incompatible architecture (have 'x86_64', need
+'arm64e'))
+
+-   unable to enter "drop_auth()" Error message: Error in
+    oauth2.0_access_token(endpoint, app, code = code, user_params =
+    user_params, : Bad Request (HTTP 400). Failed to get an access
+    token.
+
+
+*I love the idea of keeping these errors and workarounds saved somewhere! Super smart since you might fall into the same traps again and again. For the record, none of the code broke on my run through! Great job!*
+-AJL
+
+*After looking at the knitted version:*
+
+*Title part is very pretty but the rest is quite simple in comparison*
+
+*I would recommend putting some subheading outside of the chunks with the pound signs in the rmarkddown text just because all the chunks kinda blend together as you scroll down the page*
+-Best, AJL
