@@ -100,7 +100,23 @@ str(df)
 str(logic)
 str(factor)
 ```
+## Commentary
+* Things that I liked:
+  + I really liked how Emily included links in her code so she can refer back to the webpages later if needed
+  + Angelique's comments showed me that I overcomplicate my code sometimes that makes things harder than necessary at times
+  + I enjoyed seeing my peer's solutions to the challenges and how much they can differ while still giving the same results
+  
+* Things that I can improve:
+  + I needed to improve my commentary to ensure that my code is understandable and easy to follow
+  + I needed to add subheadings to divide my work and make it easier to read
+  
+* Challenges I had faced: 
+  + I had some troubles downloading packages (XLConnect) and other packages from Emily's code which I'm unsure how to fix. I learned in class that XLConnect could not be downloaded because it has not been updated for my version of RStudio
+  + I had some trouble with Challenge 1 in using str_split but I eventually solved it with the help of peers 
 
+* How was the commentary helpful:
+  + I thought the comments from Angelique was super helpful by giving me feedback from someone that won't see my internal explanations; it shows me that I need to include more explanations within my code. 
+  
 
 ## Troubleshooting Tips/Errors: 
 * Module 3: Step 4 error "remote origin already exists." (fixed)
