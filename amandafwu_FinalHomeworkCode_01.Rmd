@@ -101,9 +101,8 @@ str(logic)
 str(factor)
 ```
 ## Commentary
-* Things that I liked:
+* Things that I liked about other's code:
   + I really liked how Emily included links in her code so she can refer back to the webpages later if needed
-  + Angelique's comments showed me that I overcomplicate my code sometimes that makes things harder than necessary at times
   + I enjoyed seeing my peer's solutions to the challenges and how much they can differ while still giving the same results
   
 * Things that I can improve:
@@ -112,10 +111,13 @@ str(factor)
   
 * Challenges I had faced: 
   + I had some troubles downloading packages (XLConnect) and other packages from Emily's code which I'm unsure how to fix. I learned in class that XLConnect could not be downloaded because it has not been updated for my version of RStudio
-  + I had some trouble with Challenge 1 in using str_split but I eventually solved it with the help of peers 
+  + I had some trouble with Challenge 1 in using str_split but I eventually solved it with the help of peers and it was helpful to hear in class how others used strsplit instead of str_split for the function to work 
+  + I don't think I understood how to code Challenge 5 as I was using $ for each category because the examples in the module used it but I didn't understand what I was doing until Angelique's comments explained what I was unintentionally doing 
 
 * How was the commentary helpful:
-  + I thought the comments from Angelique was super helpful by giving me feedback from someone that won't see my internal explanations; it shows me that I need to include more explanations within my code. 
+  + I thought the comments from Angelique was super helpful by giving me feedback from someone that won't see my internal explanations; it shows me that I need to include more explanations within my code 
+  + They were really helpful in showing different ways of solving the problem that may have been less complicated and more accurate than my method 
+  + It was helpful in giving critical feedback to my Rmd and the aesthetics of my knitted version 
   
 
 ## Troubleshooting Tips/Errors: 
