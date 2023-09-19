@@ -1,5 +1,5 @@
 ---
-title: "Amandafw_OriginalHomeworkCode_01"
+title: "Amandafwu_FinalHomeworkCode_01"
 author: "Amanda Wu"
 date: "2023-09-14"
 output: 
@@ -11,7 +11,6 @@ output:
 
 ### Challenge 1
 ```{r Challenge 1}
-##Module 4 Challenge 1
 #First, create a vector of 1, word character strings comprising the first line of the novel Ulysses, by James Joyce: “Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed.”
 #Then, extract every third element of this vector.
 
@@ -31,17 +30,11 @@ m
 x <- m[, c(2,3,6)] #the numbers after the comma represents columns 
 x
 #Given the matrix, m, above, extract the 6th to 8th row and assign them to the variable x
-r <- c(6,7,8) #specifies the rows
-x <- m[r, , drop = FALSE] 
+x <- m[c(6,7,8), ] #did the same as above but with c(..) before the comma for rows
 x
 #Given the matrix, m, above, extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
-r <- c(2)
-x <- m[, c(2:6, 9)][r, , drop = FALSE]
+x <- m[c(2:6), c(2:9)] #combined both instructions for rows and columns; tip from angelique!
 x
-#or?
-x <- m[2, c(2:6, 9)]
-x
-#not sure which one is correct
 ```
 
 ### Challenge 3
@@ -49,11 +42,11 @@ x
 #Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
 a <- array(400:1, dim = c(5, 5, 4, 4)) #followed the steps in Module 4 making an array but 400:1 because it is in descending order 
 a
-b <- a[1, 1, 1, 2] 
+b <- a[1, 1, 1, 2] #extracted first row, column and level, second matrix? 
 b
-c <- a[2, 3, 2, ]
+c <- a[2, 3, 2, ] #extracted second row, third column in the second level
 c
-d <- a[1:5, 1:5, 3, 3]
+d <- a[1:5, 1:5, 3, 3] #extracted 1-5th row, 1-5th column in the third level of the third matrix 
 d
 ```
 
@@ -97,16 +90,15 @@ m3
 df <- data.frame(m3) 
 df
 #As a data frame, coerce the second column to be logical-valued
-logic <- as.logical(df$X2) #included the $ because it wouldn't work without it
+logic <- as.logical(df[ ,2]) #instead of $, used brackets to list column number
 logic
 #As a data frame, coerce the third column to be factor-valued
-factor <- as.factor(df$X3)
+factor <- as.factor(df[ ,3])
 factor
 #Use the str() command to show the data type for each variable in your dataframe.
 str(df)
 str(logic)
 str(factor)
-#Questionable whether this is what the instructions were asking for
 ```
 
 
